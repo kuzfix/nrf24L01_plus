@@ -22,6 +22,10 @@
 
 #define nrf24_ADDR_LEN 5
 #define nrf24_CONFIG ((1<<EN_CRC)|(0<<CRCO))
+#ifndef RF_DR
+	#define RF_DR	RF_DR1MPBS
+	#warning "RF datarate not defined. Using default value of 1MBPS (#define RF_DR RF_DR1MBPS). Available macros: RF_DR250KBPS, RF_DR1MPBS and RF_DR2MBPS"
+#endif
 
 #define NRF24_TRANSMISSON_OK 0
 #define NRF24_MESSAGE_LOST   1

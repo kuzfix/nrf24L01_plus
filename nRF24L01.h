@@ -87,8 +87,13 @@
 
 /* RF setup register */
 #define PLL_LOCK    4
-#define RF_DR       3
+#define RF_DR_LOW  	5
+#define RF_DR_HIGH  3
 #define RF_PWR      1 /* 2 bits */   
+/* RF datarate masks for RF setup register*/
+#define RF_DR250KBPS	(1<<RF_DR_LOW)
+#define RF_DR1MPBS		0x00
+#define RF_DR2MBPS		(1<<RF_DR_HIGH)
 
 /* general status register */
 #define RX_DR       6
